@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/mainFragment"
+        android:title="Główna"
+        android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item
+        android:id="@+id/searhFragment"
+        android:title="Szykaj"
+        android:icon="@drawable/ic_baseline_search_24"/>
+
+    <item
+        android:id="@+id/daysFragment2"
+        android:title="Prognoza"
+        android:icon="@drawable/ic_cloudy"/>
+
+</menu>

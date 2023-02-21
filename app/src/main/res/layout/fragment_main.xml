@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MainFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardVie1"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            app:cardBackgroundColor="#99CCFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:contentPadding="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Częstochowa"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCelsium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0°"
+                    android:textAlignment="center"
+                    android:textSize="70sp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCity" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="19sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCelsium" />
+
+                <TextView
+                    android:id="@+id/pa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="1007Pa"
+                    app:layout_constraintStart_toEndOf="@+id/imgPa"
+                    app:layout_constraintTop_toBottomOf="@+id/status" />
+
+                <ImageView
+                    android:id="@+id/imgPa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/status"
+                    app:srcCompat="@drawable/ic_pressure" />
+
+
+                <TextView
+                    android:id="@+id/wl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="94%"
+                    app:layout_constraintStart_toEndOf="@+id/imgDrop"
+                    app:layout_constraintTop_toBottomOf="@+id/status" />
+
+                <ImageView
+                    android:id="@+id/imgDrop"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/pa"
+                    app:layout_constraintTop_toBottomOf="@+id/status"
+                    app:srcCompat="@drawable/ic_drop" />
+
+
+                <TextView
+                    android:id="@+id/wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="9.7m/c"
+                    app:layout_constraintStart_toEndOf="@+id/imgwind"
+                    app:layout_constraintTop_toBottomOf="@+id/status" />
+
+                <ImageView
+                    android:id="@+id/imgwind"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/wl"
+                    app:layout_constraintTop_toBottomOf="@+id/status"
+                    app:srcCompat="@drawable/ic_wind" />
+
+                <TextView
+                    android:id="@+id/temper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Temperatura"
+                    app:layout_constraintBottom_toTopOf="@+id/mainChart"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/mainChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="30dp"
+                    android:padding="9dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wl" />
+
+
+                <TextView
+                    android:id="@+id/tMorning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Poranek"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mainChart" />
+
+                <TextView
+                    android:id="@+id/tAfternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="Popołudnie"
+                    app:layout_constraintStart_toEndOf="@id/tMorning"
+                    app:layout_constraintTop_toBottomOf="@+id/mainChart" />
+
+                <TextView
+                    android:id="@+id/tEvening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="Wieczór"
+                    app:layout_constraintStart_toEndOf="@id/tAfternoon"
+                    app:layout_constraintTop_toBottomOf="@+id/mainChart" />
+
+                <TextView
+                    android:id="@+id/tNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="Noc"
+                    app:layout_constraintStart_toEndOf="@id/tEvening"
+                    app:layout_constraintTop_toBottomOf="@+id/mainChart" />
+
+
+                <TextView
+                    android:id="@+id/tcMorning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text=""
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tMorning" />
+
+                <TextView
+                    android:id="@+id/tcAfternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text=""
+                    app:layout_constraintStart_toEndOf="@id/tMorning"
+                    app:layout_constraintTop_toBottomOf="@+id/tAfternoon" />
+
+                <TextView
+                    android:id="@+id/tcEvening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text=""
+                    app:layout_constraintStart_toEndOf="@id/tAfternoon"
+                    app:layout_constraintTop_toBottomOf="@+id/tEvening" />
+
+                <TextView
+                    android:id="@+id/tcNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text=""
+                    app:layout_constraintStart_toEndOf="@id/tEvening"
+                    app:layout_constraintTop_toBottomOf="@+id/tNight" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Dzisiaj"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardVie1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hoursRV"
+            android:layout_width="409dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today"
+            tools:listitem="@layout/hour_row" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTodayDetails"
+            app:cardBackgroundColor="#FFCCCC"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hoursRV">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/todayCloud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next 15 days"
+                    android:layout_marginLeft="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/todayHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:text="Next 15 days"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/todayCloud"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/todayPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:text="Next 15 days"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintStart_toEndOf="@+id/todayHumidity"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

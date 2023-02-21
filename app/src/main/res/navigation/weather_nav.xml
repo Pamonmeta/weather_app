@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.weathermv.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+    </fragment>
+    <fragment
+        android:id="@+id/searhFragment"
+        android:name="com.example.weathermv.fragments.SearhFragment"
+        android:label="fragment_searh"
+        tools:layout="@layout/fragment_searh" >
+        <action
+            android:id="@+id/searchToCity"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/daysFragment2"
+        android:name="com.example.weathermv.fragments.DaysFragment"
+        android:label="fragment_days"
+        tools:layout="@layout/fragment_days" >
+        <action
+            android:id="@+id/dayToTab"
+            app:destination="@id/dayDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dayDetailsFragment"
+        android:name="com.example.weathermv.fragments.DayDetailsFragment"
+        android:label="fragment_day_details"
+        tools:layout="@layout/fragment_day_details" >
+        <argument
+            android:name="dateday"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.weathermv.fragments.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result" >
+        <argument
+            android:name="city"
+            app:argType="string" />
+    </fragment>
+</navigation>
